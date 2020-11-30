@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Lab09 - Task3 - project: Загальне завдання</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Lab09 - Task3 - project
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Демонстрація документування коду третьго завдання засобами `doxygen`</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Створено системою Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Пошук');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Пошук');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Загальне завдання </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><ol type="1">
+<li><b>Розробити</b> Розробити програму для підраховування кількості слів у заданому масиві з будь-яким проміжком(кількістю пробілів)</li>
+</ol>
+<p>#Опис програми</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Функціональне призначення</h1>
+<p><b>Функціональне призначення</b> Програма призначена для підраховування кількості слів з будь-яким проміжком ( будь-якою кількістю пробілів між словами ) . </p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Опис логічної структури</h1>
+<p><b>Опис логічної структури</b> Є заданий масив зі словами , програма звертається до функції використовуючи цей масив . Функція складається з циклу вайл , у якому йде перебір кожного індексу , використовуючи умовні оператори ,програма додає до кількості слів 1 , поки йде слово, як тільки воно закінчилося , йде перевірка наступного індексу , й так, поки не перевіриться весь масив. Повертає результат кількості слів. Схема алгоритму дій подана на блок-схемі (рис. 1) <a href="https://prnt.sc/vt6n2n">Рисунок 1 - Схема алгоритму дій</a></p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Реалізація програми на мові С</h1>
+<p>‘‘‘ char <a class="el" href="main_8c.html#a2118a8e305cf24e97e80cef969be1dc8" title="Функція підраховування кількості слів.">func(const char massiv[])</a> <br  />
+ { int result = 0; <br  />
+ int length = 0; <br  />
+ int found = 0; <br  />
+ while(massiv[length] !=0) { if(massiv[length] !=' ') { <br  />
+ if (found == 0) { result ++; } found = 1; } else { found = 0; } length++; } return result; }</p>
+<p>int <a class="el" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Основна функція, яка звертається до іншої функції.">main()</a> <br  />
+ { const char mas[] = " Hi gitler x x x "; int RES = func(mas); <br  />
+ }‘‘‘ </p>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Результат роботи програми</h2>
+<p>Результат роботи програми на (рис 2) <a href="https://prnt.sc/vt6nxw">Рисунок 2 - Демонстрація рооти програми</a></p>
+<dl class="section author"><dt>Автор</dt><dd>Kulish Pavlo. </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>01-dec-2020 </dd></dl>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Створено системою &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>
