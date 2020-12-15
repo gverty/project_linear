@@ -1,7 +1,7 @@
 /**
 * @mainpage
 * # Загальне завдання
-* 1. **Розробити** 
+* 1. **Розробити**
 *	Програму яка знаходить безперервну послідовність позитивних чисел з максимальною сумою,та переписує таку послідовність у 	*	результуючий масив
 *
 * # Опис програми
@@ -14,7 +14,7 @@
 *	зайшовши у перевірку відразу до поточної суми додаємо поточний елемент
 *	1 перевірка - якщо це перший елемент або І-1 елемент меньше 1 запам'ятовується поточний початковий індекс
 *	2 перевірка - якщо це кінцевий елемент або і+1 елемент меньше 1 - запам'ятовується поточний кінцевий індекс проміжку
-*	3 перевірка - якщо поточна сума більша за (початкову"кінцеву" = 0) , запам'ятовується як "кінцева сума = поточній" 
+*	3 перевірка - якщо поточна сума більша за (початкову"кінцеву" = 0) , запам'ятовується як "кінцева сума = поточній"
 * @author Kulish Pavlo.
 * @date 15-Dec-2020
 */
@@ -23,17 +23,17 @@
 * @file main.c
 * Програма призначена для заповнення масиву заданою кількістю простих чисел.
 * @author Kulish Pavlo
-* @version 0.4 
-* date 15.12.2020 
+* @version 0.4
+* date 15.12.2020
 *
 */
 #include <malloc.h>
 #include <time.h>
+/*Об'явлення функції заповнення масиву*/
+int fucntionFillingMainArray(const int, int*);
 int main()
 {
     srand(time(NULL));
-    /*Об'явлення функції заповнення масиву*/
-    int fucntionFillingMainArray(const int length, int* mainarray);
     /*@lengthMainArray Змінна довжини масиву*/
     const int lengthMainArray = 20;
     /*Об'явлення головного масиву @mainArray та виділення під нього потрібної кількості пам'яті*/
@@ -52,16 +52,16 @@ int main()
     int actualBeginSegmentIndex = -1;
     /*@actualEndSegmentIndex Змінна для поточного кінцевого індексу проміжку*/
     int actualEndSegmentIndex = -1;
-    
-    
-    
+
+    //int *ptrMainArray = mainArray;
+
     for (int i = 0; i < lengthMainArray; i++) {
-        if (mainArray[i] > 0) {
-            actualSumm += mainArray[i];
-            if (i == 0 || mainArray[i - 1] < 1) {
+        if (*(mainArray+i) > 0) {
+            actualSumm += *mainArray;
+            if (i == 0 || *(mainArray+i-1) < 1) {
                 actualBeginSegmentIndex = i;
             }
-            if (i == lengthMainArray - 1 || mainArray[i + 1] < 1) {
+            if (i == lengthMainArray - 1 || *(mainArray-i-1) < 1) {
                 actualEndSegmentIndex = i;
                 if (actualSumm > finalSum) {
                     finalSum = actualSumm;
@@ -72,9 +72,9 @@ int main()
             }
         }
     }
-    
-    
-    
+
+
+
     printf("\n%s%d\n", "sum = ", finalSum);
     printf("\n%s%d\n", "begin index = ", finalBeginSegmentIndex);
     printf("\n%s%d\n", "end index = ", finalEndSegmentIndex);
@@ -85,7 +85,7 @@ int main()
     /*Вказівка @original на адрес масиву @mainArray з остаточним індексом @finalBeginSegmentIndex*/
     int* original = &mainArray[finalBeginSegmentIndex];
     /*Цикл заповнення результуючого масиву*/
-    for (int i = 0; i < resLength; i++) {
+    for (int i = -1; i < resLength; i++) {
         *resultArray = *original;
         resultArray++;
         original++;
@@ -98,7 +98,7 @@ int main()
     }
 }
 
-int fucntionFillingMainArray(const int length,int *mainarray) {
+int fucntionFillingMainArray(const int length, int* mainarray) {
     for (int i = 0; i < length; i++) {
         *mainarray++ = rand() % 200 + -10;
     }

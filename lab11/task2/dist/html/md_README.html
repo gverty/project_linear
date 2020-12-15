@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Lab10 - Task1 - project: Загальне завдання</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Lab10 - Task1 - project
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Робота з МаркДовн документацією + Доксиджен</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Створено системою Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Пошук');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Пошук');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Загальне завдання </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><ol type="1">
+<li><b>Розробити</b> Програму яка знаходить безперервну послідовність позитивних чисел з максимальною сумою,та переписує таку послідовність у результуючий масив #Опис програми</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Функціональне призначення</h1>
+<p><b>Функціональне призначення</b> Програма призначена для знахождення безперервної послідовності позитивних чисел з максимальною сумою.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Опис логічної структури</h1>
+<p><b>Опис логічної структури</b> <br  />
+ Програма складається з функції заповненя масиву. Після заповнення масиву виконується цикл довжиною заповненого масиву У цьому циклі,якщо число позитивне - заходим у перевірку зайшовши у перевірку відразу до поточної суми додаємо поточний елемент 1 перевірка - якщо це перший елемент або І-1 елемент меньше 1 запам'ятовується поточний початковий індекс 2 перевірка - якщо це кінцевий елемент або і+1 елемент меньше 1 - запам'ятовується поточний кінцевий індекс проміжку <br  />
+ 3 перевірка - якщо поточна сума більша за (початкову"кінцеву" = 0) , запам'ятовується як "кінцева сума = поточній". Схема алгоритму дій подана на блок схемі (рис 1) <a href="https://prnt.sc/w38z12">Рисунок 1 - Схема алгоритму дій</a></p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Реалізація програми на мові С</h1>
+<p>‘‘‘::include &lt;malloc.h&gt; #include &lt;time.h&gt; int <a class="el" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a> { srand(time(NULL)); /*Об'явлення функції заповнення масиву*/ int <a class="el" href="main_8c.html#a45e309bf7af583a3b6b17b5e8b7cc16f">fucntionFillingMainArray(const int length, int* mainarray)</a>; /*@lengthMainArray Змінна довжини масиву*/ const int lengthMainArray = 20; /*Об'явлення головного масиву @mainArray та виділення під нього потрібної кількості пам'яті*/ int* mainArray = (int*)malloc(lengthMainArray * sizeof(int)); /*Звернення до функції заповнення масиву @mainArray */ <em>mainArray = fucntionFillingMainArray(lengthMainArray, mainArray); /</em>@finalSum Змінна для фіксування остаточної сумми*/ int finalSum = -1; /*@finalBeginSegmentIndex Змінна для фіксування початкового індексу проміжку*/ int finalBeginSegmentIndex = -1; /*@finalEndSegmentIndex Змінна для фіксування кінцевого індексу проміжку*/ int finalEndSegmentIndex = -1; /*@actualSumm Змінна для тимчасової(не остаточної) сумми */ int actualSumm = 0; /*@actualBeginSegmentIndex Змінна для тимчасового початкового індексу проміжку*/ int actualBeginSegmentIndex = -1; /*@actualEndSegmentIndex Змінна для поточного кінцевого індексу проміжку*/ int actualEndSegmentIndex = -1;</p>
+<pre class="fragment">for (int i = 0; i &lt; lengthMainArray; i++) {
+    if (mainArray[i] &gt; 0) {
+        actualSumm += mainArray[i];
+        if (i == 0 || mainArray[i - 1] &lt; 1) {
+            actualBeginSegmentIndex = i;
+        }
+        if (i == lengthMainArray - 1 || mainArray[i + 1] &lt; 1) {
+            actualEndSegmentIndex = i;
+            if (actualSumm &gt; finalSum) {
+                finalSum = actualSumm;
+                finalBeginSegmentIndex = actualBeginSegmentIndex;
+                finalEndSegmentIndex = actualEndSegmentIndex;
+            }
+            actualSumm = 0;
+        }
+    }
+}
+
+
+
+printf("\n%s%d\n", "sum = ", finalSum);
+printf("\n%s%d\n", "begin index = ", finalBeginSegmentIndex);
+printf("\n%s%d\n", "end index = ", finalEndSegmentIndex);
+/*@resLength Змінна - розмір результуючого масиву в залежності від потрібної кількості*/
+const int resLength = finalEndSegmentIndex - finalBeginSegmentIndex + 1;
+/*Об'явлення масиву @resultArray та виділення пам'яті під результуючий масив відштовхуючись від потрібної кількості*/
+int* resultArray = (int*)malloc(resLength * sizeof(int));
+/*Вказівка @original на адрес масиву @mainArray з остаточним індексом @finalBeginSegmentIndex*/
+int* original = &amp;mainArray[finalBeginSegmentIndex];
+/*Цикл заповнення результуючого масиву*/
+for (int i = 0; i &lt; resLength; i++) {
+    *resultArray = *original;
+    resultArray++;
+    original++;
+}
+resultArray = resultArray - resLength;
+
+/*Цикл виведення результуючого масиву*/
+for (int i = 0; i &lt; resLength; i++) {
+    printf("\n%s%d%s%d", "result[", i, "]= ", resultArray[i]);
+}
+</pre><p> }</p>
+<p>int <a class="el" href="main_8c.html#a45e309bf7af583a3b6b17b5e8b7cc16f">fucntionFillingMainArray(const int length, int* mainarray)</a> { for (int i = 0; i &lt; length; i++) { *mainarray++ = rand() % 200 + -10; } return 0; }‘‘‘ </p>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Результат роботи програми</h2>
+<p>Результат роботи програми на (рис 2) <a href="https://prnt.sc/w2w2e9">Рисунок 2 - Демонстрація роботи програми</a></p>
+<dl class="section author"><dt>Автор</dt><dd>Kulish Pavlo. </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>15-dec-2020 </dd></dl>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Створено системою &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>
