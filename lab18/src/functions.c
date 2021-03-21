@@ -10,7 +10,7 @@
 void GetData(struct basic_type* sneakers,const int N) {
     srand(time(NULL));
     char* listOfBrands[3] = { (char*)"Adidas", (char*)"Nike", (char*)"Puma"};
-    char* listOfModels[2] = { (char*)"AirForce",(char*)"Superstar" };
+    char* listOfModels[2] = { (char*)"AirForce",(char*)"SuperStar" };
     char* listOfYes_No[2] = { (char*)"Yes",(char*)"No" };
     for (int i = 0; i < N; i++) {
     
